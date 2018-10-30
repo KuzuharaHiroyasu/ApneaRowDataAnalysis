@@ -147,7 +147,7 @@ void getwav_apnea(const double* pData, int DSize, int Param1, double Param2, dou
 		ave /= loop;
 		ave_[ii] = ave;
 	}
-	debug_out("ave", ave_, DSize, path_);
+	debug_out("ave", ave_, DSize, tempPath_);
 
 	// (38) - (39)
 	for (int ii = 0; ii < DSize; ++ii) {
@@ -158,7 +158,7 @@ void getwav_apnea(const double* pData, int DSize, int Param1, double Param2, dou
 			eval_[ii] = 0;
 		}
 	}
-	debug_out("eval2", eval_, DSize, path_);
+	debug_out("eval2", eval_, DSize, tempPath_);
 
 	// (41) ... Žg—p‚µ‚Ä‚¢‚È‚¢‚½‚ßÈ—ª
 	// (42)
@@ -174,7 +174,7 @@ void getwav_apnea(const double* pData, int DSize, int Param1, double Param2, dou
 		tmp /= 20;
 		rms_[ii] = sqrt(tmp);
 	}
-	debug_out("RMS", rms_, datasize, path_);
+	debug_out("RMS", rms_, datasize, tempPath_);
 
 	// (44) = ppoint
 	// (45) = rms_
@@ -187,7 +187,7 @@ void getwav_apnea(const double* pData, int DSize, int Param1, double Param2, dou
 			point_[ii] = 0;
 		}
 	}
-	debug_out("point", point_, datasize, path_);
+	debug_out("point", point_, datasize, tempPath_);
 
 	// (46)
 	if (datasize == 0) {
@@ -222,7 +222,7 @@ void getwav_apnea(const double* pData, int DSize, int Param1, double Param2, dou
 	}
 
 	double tmpapnea = (double)apnea_;
-	debug_out("apnea", &tmpapnea, 1, path_);
+	debug_out("apnea", &tmpapnea, 1, tempPath_);
 }
 
 /*==============================================================================*/
